@@ -1,0 +1,9 @@
+--- 
+- !ruby/object:Event 
+  description: bar
+  start: today!
+  title: foo
+- !ruby/object:Event 
+  description: Very cool...
+  start: today!
+  title: First Event
