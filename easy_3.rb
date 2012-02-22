@@ -6,12 +6,12 @@ if (ARGV.length == 2)
 	input.each_byte do |c|
 		if (c >= 65 and c <= 90)
 			d = c+offset
-			if (d > 90)
+			until (d >= 65 and d <= 90)
 				d = d - 26
 			end
 		elsif (c >= 97 and c <= 122)
 			d = c + offset
-			if (d > 122)
+			until (d >= 97 and d <= 122)
 				d = d - 26
 			end
 		else
