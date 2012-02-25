@@ -1,6 +1,9 @@
-#In 1934, an Indian math student, S. P. Sundaram, invented a new method of sieving primes:
-#From a list of integers from 1 to n, remove all integers of the form i + j + 2ij where integers i and j range from 1 . i . j and i + j + 2ij . n. For each remaining integer k, the integer 2k+1 is prime, and the list gives all the odd primes (thus excluding the prime 2).
-#Your task is to implement the sieve of Sundaram and calculate the list of primes to 10000.
+=begin
+In 1934, an Indian math student, S. P. Sundaram, invented a new method of sieving primes:
+From a list of integers from 1 to n, remove all integers of the form i + j + 2ij where integers i and j range from 1 . i . j and i + j + 2ij . n. 
+For each remaining integer k, the integer 2k+1 is prime, and the list gives all the odd primes (thus excluding the prime 2).
+Your task is to implement the sieve of Sundaram and calculate the list of primes to 10000.
+=end
 
 i = 1
 n = 5000
