@@ -3,28 +3,19 @@ Welcome to cipher day!
 write a program that can encrypt texts with an alphabetical caesar cipher. This cipher can ignore numbers, symbols, and whitespace.
 for extra credit, add a "decrypt" function to your program!
 =end
-if (ARGV.length == 2)
+
+UPPERS = ("A".."Z").to_a
+LOWERS = ("a".."z").to_a
+
+if (ARGV.length >= 1)
 	input = ARGV[0]
-	offset = ARGV[1].to_i
-	output = Array.new(0)
+	offset = (ARGV[1] || 1).to_i
+	output = []
 
-	input.each_byte do |c|
-		if (c >= 65 and c <= 90)
-			d = c+offset
-			until (d >= 65 and d <= 90)
-				d = d - 26
-			end
-		elsif (c >= 97 and c <= 122)
-			d = c + offset
-			until (d >= 97 and d <= 122)
-				d = d - 26
-			end
-		else
-			d = c
-		end
-
-		output.push d.chr
+	input.each_char do |c|
+		key = UPPERS.include?(c) ? UPPERS :
+			  LOWERS.include?(c) ? LOWERS : nil
+		output << (key ? key[((c.bytes.first - key.first.bytes.first) + offset) % key.length] : c).chr
 	end
-
 	puts output.join
 end
